@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #eff7fb;
+  background: #071521;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(125, 211, 252, 0.18), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(45, 212, 191, 0.1), transparent 26%),
+    linear-gradient(180deg, rgba(7, 21, 33, 1) 0%, rgba(13, 33, 53, 1) 52%, rgba(18, 49, 76, 1) 100%);
+  font-family: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(72px);
+  z-index: 0;
+}
+
+body::before {
+  left: -120px;
+  top: 140px;
+  height: 280px;
+  width: 280px;
+  background: rgba(56, 189, 248, 0.16);
+}
+
+body::after {
+  right: -100px;
+  top: 360px;
+  height: 260px;
+  width: 260px;
+  background: rgba(45, 212, 191, 0.12);
+}
+
+.glass {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.05)),
+    rgba(8, 23, 36, 0.72);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(226, 242, 255, 0.14);
+  box-shadow:
+    0 28px 90px rgba(4, 14, 27, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.panel-outline {
+  position: relative;
+  isolation: isolate;
+}
+
+.panel-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.35), rgba(45, 212, 191, 0.18), rgba(255, 255, 255, 0.06));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(216, 237, 247, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.55rem 0.95rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(239, 247, 251, 0.82);
+}
+
+.section-badge::before {
+  content: "";
+  height: 0.55rem;
+  width: 0.55rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #7dd3fc, #2dd4bf);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+}
+
+.metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(216, 237, 247, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.6rem 0.95rem;
+  color: rgba(239, 247, 251, 0.84);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #eff9ff 0%, #8fe8ff 44%, #6ee7d8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.soft-card {
+  border: 1px solid rgba(216, 237, 247, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04)),
+    rgba(8, 23, 36, 0.52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.dashboard-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0.6rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.95), rgba(45, 212, 191, 0.92));
+  outline: none;
+}
+
+.dashboard-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 9999px;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  background: #071521;
+  box-shadow: 0 0 0 6px rgba(125, 211, 252, 0.18);
+}
+
+.dashboard-slider::-moz-range-thumb {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 9999px;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  background: #071521;
+  box-shadow: 0 0 0 6px rgba(125, 211, 252, 0.18);
+}
+
+.dashboard-slider::-moz-range-track {
+  height: 0.6rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.95), rgba(45, 212, 191, 0.92));
+}
+
+input,
+select {
+  color-scheme: dark;
+}
