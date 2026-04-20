@@ -7,3 +7,5 @@ ml-service/app/__pycache__/
 *.pyc
 backend/.env
 frontend/.env
+ml-service/data/*.csv
+*.zip
